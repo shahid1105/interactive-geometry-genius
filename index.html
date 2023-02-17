@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="md:mx-12 lg:mx-12 px-12 bg-sky-100 shadow-xl rounded-md">
+    <header class="md:mx-12 lg:mx-12 md:px-12 lg:px-12 bg-sky-100 shadow-xl rounded-md">
         <div class="navbar">
             <div class="flex-1">
               <a class="pb-2"><span class="font-bold text-[#111111] opacity-80 text-[30px]">Interactive</span><br> <span class="text-[20px] opacity-60">Geometry Genius</span></a>
@@ -22,7 +22,42 @@
         </div>
     </header>
     <main>
-        
+        <section class="md:mx-12 lg:mx-12 mt-6">
+            <div class="w-full md:w-[75%] lg:w-[75%] gap-4 grid md:grid-cols-2 lg:grid-cols-3">
+                <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="py-8 px-16" src="images/triangle.png" alt="Triangle" /></figure>
+                    <div class="card-body">
+                      <h2 class="text-center">Triangle</h2>
+                      <p class="text-center">Area (A) = 0.5 x b x h</p>
+                      <div class="inline-flex mb-12 pl-4">
+                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="b">
+                        <p class="pl-2">cm</p> 
+                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="h">
+                        <p class="pl-2">cm</p>
+                      </div>
+                      <div class="card-actions text-center">
+                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card w-full bg-base-100 shadow-xl">
+                    <figure><img class="py-8 px-16" src="images/rectangle.png" alt="Rectangle" /></figure>
+                    <div class="card-body">
+                      <h2 class="text-center">Rectangle</h2>
+                      <p class="text-center">Area (A) = 0.5 x w x L</p>
+                      <div class="inline-flex mb-12 pl-4">
+                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="w">
+                        <p class="pl-2">cm</p> 
+                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="L">
+                        <p class="pl-2">cm</p>
+                      </div>
+                      <div class="card-actions text-center">
+                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
     </main>
 </body>
 
