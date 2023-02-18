@@ -8,12 +8,14 @@ document.getElementById('first-card').addEventListener('click', function () {
     const CardSecondInput = document.getElementById('tr-second-input').value;
     const rules = document.getElementById('tr-rules').innerText;
 
+    // if(isNaN(CardFirstInput)){
+    //     alert('Please provide a valid number');
+    // }
     const calculation = parseFloat(rules) * parseFloat(CardFirstInput) * parseFloat(CardSecondInput).toFixed(2);
-
     
     // const result = calculationResult(cardTitle, CardFirstInput, CardSecondInput);
-    displayData(cardTitle, calculation);
     
+    displayData(cardTitle, calculation);
     
 })
 
@@ -101,8 +103,14 @@ function displayData(cardTitle, calculation){
     tr.innerHTML=`
     <td>${serial}</td>
     <td>${cardTitle}</td>
-    <td><p>${calculation} cm</p></td>
-    <button>convert to cm2</button>
+    <td><p>${calculation} cm<sup>2</sup></p></td>
+    <button>convert to cm</button>
     `
     calculationTable.appendChild(tr);
 }
+
+
+// change page: go to blog page
+document.getElementById('btn-blog').addEventListener('click', function(){
+    window.location.href = 'blog.html';
+})
