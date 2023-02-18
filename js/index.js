@@ -7,16 +7,21 @@ document.getElementById('first-card').addEventListener('click', function () {
     const CardFirstInput = document.getElementById('tr-first-input').value;
     const CardSecondInput = document.getElementById('tr-second-input').value;
     const rules = document.getElementById('tr-rules').innerText;
-
-    // if(isNaN(CardFirstInput)){
-    //     alert('Please provide a valid number');
-    // }
-    const calculation = parseFloat(rules) * parseFloat(CardFirstInput) * parseFloat(CardSecondInput).toFixed(2);
     
-    // const result = calculationResult(cardTitle, CardFirstInput, CardSecondInput);
+    const calculation =calculationValue(CardFirstInput,CardSecondInput,rules);
+    
+    // first card validation
+    
+    if(CardFirstInput <= 0 || CardSecondInput <= 0){
+        alert('Please provide a valid number');
+        return;
+    }
+    else if(isNaN(calculation)){
+        alert('Please provide a valid number')
+        return;
+    }
     
     displayData(cardTitle, calculation);
-    
 })
 
 // second card calculation
@@ -28,9 +33,20 @@ document.getElementById('second-card').addEventListener('click', function () {
     const CardSecondInput = document.getElementById('re-second-input').value;
     const rules = document.getElementById('re-rules').innerText;
 
-    const calculation = parseFloat(rules) * parseFloat(CardFirstInput) * parseFloat(CardSecondInput).toFixed(2);
+    // call function
+    const calculation = calculationValue(CardFirstInput,CardSecondInput,rules);
 
-    // const result = calculationResult(cardTitle, CardFirstInput, CardSecondInput);
+    // second card validation
+    if(CardFirstInput <= 0 || CardSecondInput <= 0){
+        alert('Please provide a valid number');
+        return;
+    }
+    else if(isNaN(calculation)){
+        alert('Please provide a valid number')
+        return;
+    }
+    
+    // call function
     displayData(cardTitle, calculation);
 })
 
@@ -85,18 +101,24 @@ document.getElementById('sixth-card').addEventListener('click', function(){
 
     const calculation = 3.1416 * parseFloat(num1) * parseFloat(num2);
 
-    displayData(cardTitle, calculation);
+    displayData(cardTitle, calculation.toFixed(2));
+})
+
+
+// change page: go to blog page
+document.getElementById('btn-blog').addEventListener('click', function(){
+    window.location.href = 'blog.html';
 })
 
 
 // common function 
-// function calculationResult( CardFirstInput, CardSecondInput) {
-//     const rules = document.getElementsByClassName('rules').innerText;
-//     const calculation = parseFloat(rules) * parseFloat(CardFirstInput) * parseFloat(CardSecondInput).toFixed(2);
+// first and second card common function
+function calculationValue(CardFirstInput,CardSecondInput,rules){
+    const calculation = parseFloat(rules) * parseFloat(CardFirstInput) * parseFloat(CardSecondInput).toFixed(2);
+    return calculation;
+}
 
-//     return calculation;
-// }
-
+// for all card common function
 function displayData(cardTitle, calculation){
     const calculationTable = document.getElementById('calculation-table');
     const tr = document.createElement('tr');
@@ -104,13 +126,28 @@ function displayData(cardTitle, calculation){
     <td>${serial}</td>
     <td>${cardTitle}</td>
     <td><p>${calculation} cm<sup>2</sup></p></td>
-    <button>convert to cm</button>
+    <td><p><button style.backgroundColor = 'blue'>convert to m<sup>2</sup></button></p</td>
     `
     calculationTable.appendChild(tr);
 }
 
 
-// change page: go to blog page
-document.getElementById('btn-blog').addEventListener('click', function(){
-    window.location.href = 'blog.html';
-})
+// change background color
+
+function changeBgColor(event){
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+  
+     bgColor;
+}
+
+// let divs = document.querySelectorAll('div');
+// for (let i = 0; i < divs.length; i++) {
+//       divs[i].onclick = function()
+// }
+// {
+//     e.target.style.backgroundColor = changeBgColor();
+// }
+
