@@ -145,23 +145,3 @@ function displayData(cardTitle, calculation) {
     td.appendChild(button);
     tr.appendChild(td);
 }
-
-
-// change background color
-
-// function changeBgColor() {
-//     let x = Math.floor(Math.random() * 256);
-//     let y = Math.floor(Math.random() * 256);
-//     let z = Math.floor(Math.random() * 256);
-//     let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-
-//     div.style.backgroundColor = bgColor;
-// }
-
-// let divs = document.querySelectorAll('div');
-// for (let i = 0; i < divs.length; i++) {
-//       divs[i].onclick = function()
-// }
-// {
-//     e.target.style.backgroundColor = changeBgColor();
-// }
