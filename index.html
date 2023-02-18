@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fifth Assignment</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -29,18 +28,18 @@
             <div class="w-full md:w-[75%] lg:w-[75%] gap-4 grid md:grid-cols-2 lg:grid-cols-3">
                 <!-- first card start -->
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
-                    <figure><img class="py-8 px-16" src="images/triangle.png" alt="Triangle" /></figure>
+                    <figure><img class="py-10 px-16" src="images/triangle.png" alt="Triangle" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141">Triangle</h2>
-                      <p class="text-center">Area (A) = 0.5 x b x h</p>
+                      <h2 id="tr-title" class="text-center text-2xl font-bold text-[#414141">Triangle</h2>
+                      <p class="text-center">Area (A) = <span id="tr-rules">0.5</span> x b x h</p>
                       <div class="inline-flex mb-12 pl-4">
-                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="b">
+                        <input id="tr-first-input" class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="b">
                         <p class="pl-2">cm</p> 
-                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="h">
+                        <input id="tr-second-input" class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="h">
                         <p class="pl-2">cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="first-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -48,18 +47,18 @@
 
                 <!-- second card start -->
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
-                    <figure><img class="py-8 px-16" src="images/rectangle.png" alt="Rectangle" /></figure>
+                    <figure><img class="py-12 px-16 " src="images/rectangle.png" alt="Rectangle" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141">Rectangle</h2>
-                      <p class="text-center">Area (A) = 0.5 x w x L</p>
+                      <h2 id="re-title" class="text-center text-2xl font-bold text-[#414141">Rectangle</h2>
+                      <p class="text-center">Area (A) = <span id="re-rules">0.5</span> x w x L</p>
                       <div class="inline-flex mb-12 pl-4">
-                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="w">
+                        <input id="re-first-input" class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="w">
                         <p class="pl-2">cm</p> 
-                        <input class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="L">
+                        <input id="re-second-input" class="bg-[#F1F1F1] px-2 w-[30%] rounded" type="text" placeholder="L">
                         <p class="pl-2">cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="second-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -67,15 +66,15 @@
 
                 <!-- third card start -->
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
-                    <figure><img class="py-8 px-16" src="images/parallelogram.png" alt="Parallelogram" /></figure>
+                    <figure><img class="py-14 px-16" src="images/parallelogram.png" alt="Parallelogram" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141">Paralla</h2>
+                      <h2 id="pa-title" class="text-center text-2xl font-bold text-[#414141">Parallelogram</h2>
                       <p class="text-center">Area (A) = b x h</p>
                       <div class="inline-flex mb-12">
-                        <p class="text-center">b = 10 cm, h = 12 cm</p>
+                        <p class="text-center">b = <span id="pa-num1">10</span> cm, h = <span id="pa-num2">12</span> cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="third-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -83,15 +82,15 @@
 
                 <!-- fourth card start -->
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
-                    <figure><img class="py-8 px-16" src="images/rhombus.png" alt="Rhombus" /></figure>
+                    <figure><img class="py-12 px-16" src="images/rhombus.png" alt="Rhombus" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141">Rhombus</h2>
-                      <p class="text-center">Area (A) = 0.5 x d1 x d2</p>
+                      <h2 id="rh-title" class="text-center text-2xl font-bold text-[#414141">Rhombus</h2>
+                      <p class="text-center">Area (A) = <span id="rh-num">0.5</span> x d1 x d2</p>
                       <div class="inline-flex mb-12">
-                        <p class="text-center">d1 = 16 cm, d2 = 8 cm</p>
+                        <p class="text-center">d1 = <span id="rh-num1">16</span> cm, d2 = <span id="rh-num2">8</span> cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="fourth-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -101,13 +100,13 @@
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
                     <figure><img class="py-8 px-16" src="images/pentagon.png" alt="Pentagon" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141">Pentagon</h2>
+                      <h2 id="pe-title" class="text-center text-2xl font-bold text-[#414141">Pentagon</h2>
                       <p class="text-center">Area (A) = p x b</p>
                       <div class="inline-flex mb-12">
-                        <p class="text-center">p = 6 cm, b = 10 cm</p>
+                        <p class="text-center">p = <span id="pe-num1">6</span> cm, b = <span id="pe-num2">10</span> cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="fifth-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -115,15 +114,15 @@
 
                 <!-- sixth card start -->
                 <div class="card w-full bg-base-100 border-solid border-[1px]">
-                    <figure><img class="py-8 px-16" src="images/ellipse.png" alt="Ellipse" /></figure>
+                    <figure><img class="py-14 px-16" src="images/ellipse.png" alt="Ellipse" /></figure>
                     <div class="card-body">
-                      <h2 class="text-center text-2xl font-bold text-[#414141]">Ellipse</h2>
-                      <p class="text-center">Area (A) = b x h</p>
+                      <h2 id="el-title" class="text-center text-2xl font-bold text-[#414141]">Ellipse</h2>
+                      <p class="text-center">Area (A) = πab</p>
                       <div class="inline-flex mb-12">
-                        <p class="text-center">b = 10 cm, h = 12 cm</p>
+                        <p class="text-center">b = <span id="el-num1">10</span> cm, h = <span id="el-num2">4</span> cm</p>
                       </div>
                       <div class="card-actions text-center">
-                        <button class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
+                        <button id="sixth-card" class="btn bg-[#1090D8] hover:bg-[#1080D8] w-full">Calculate</button>
                       </div>
                     </div>
                 </div>
@@ -131,11 +130,25 @@
                 <!-- sixth card end -->
 
                 <!-- area calculate -->
-            <div class="mt-2 mx-auto border-solid border-[1px] w-[25%] h-3/4 rounded">
-                <h1 class="text-xl font-bold text-center h-[500px] underline underline-offset-4">Area Calculation</h1>
+            <div class="mt-2 mx-auto border-solid border-[1px] w-full md:w-[25%] lg:w-[25%] h-3/4 rounded">
+                <h1 class="text-xl font-bold text-center underline underline-offset-4">Area Calculation</h1>
+                <div class="overflow-x-auto mt-6">
+                    <table class="table w-full">
+                      <tbody id="calculation-table">
+                        <!-- row 1 -->
+                        <!-- <tr>
+                          <th>1</th>
+                          <td>Cy</td>
+                          <td>Quality</td>
+                          <td>Blue</td>
+                        </tr> -->
+                      </tbody>
+                    </table>
+                  </div>
             </div>
         </section>
     </main>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
